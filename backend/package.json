@@ -1,0 +1,31 @@
+{
+  "name": "store-backend",
+  "version": "1.0.0",
+  "description": "\"Aplicativo de backend, para un tienda!\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/",
+    "encender": "nodemon src/"
+  },
+  "keywords": [
+    "NodeJS",
+    "BackEnd",
+    "Tienda",
+    "Estudiantes"
+  ],
+  "author": "@Eder Lara Trujillo",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-multiparty": "^2.2.0",
+    "dotenv": "^9.0.0",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
