@@ -12,7 +12,7 @@
  /* -----------------------------      Pruebas         ------------------------------ */
  function userTest(req, res){
      // Hora Actual:
-     let ahora = momento().format('LTS');
+     let ahora = momento().format('LTS')
      // Response desde el servidor:
      res.status(200).send({
              userCTRL: 'Accediendo a la ruta de prueba de Usuarios',
