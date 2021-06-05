@@ -6,6 +6,10 @@
 // Cargamos el framework para trabajar con fechas:
 let momento = require('moment');
 let { msj } = require('./serverstatus');
+
+// Cargamos el servicio de jwt:
+let jwt = require('../service/jwt');
+
 // Importamos las librerias de control de archivos y rutas:
 const conn = require('../config/conex');
 
@@ -74,8 +78,45 @@ function userTest(req, res){
 
   /* -----------------------------      LOGIN         ------------------------------ */
 
+function login(req, res){
+    const parametros = req.body;
+    // Variables de usuario y contraseña del formulario:
+    let usuario = parametros.usuario;
+    let passuser = parametros.passuser;
+
+    // Consulta SQL:
+    const sql = "CALL login('"+usuario+"','"+passuser+"')";
+    // Ejecutamos la consulta:
+    conn.query(sql, (err, usuario)=>{
+        // Validamos los errores:
+        if (err) throw err;     // Muestra el error obtenido
+        // Validamos el resultado de la consulta:
+        if (usuario.length > 0 ) {
+            // Cargamos el resultado en una variable:
+            const resultado = usuario[0];
+            console.log(resultado); // Imprimimos el resultado;
+            if (resultado.mensaje === 'Usuario y/o contraseña incorrectos!' ) {
+                return res.status(200).send({
+                    mensaje: resultado.mensaje
+                });
+            } else {
+                // Capturamos el token en una variable:
+                if(parametros.gettoken){
+                    return res.status(200).send({
+                        token: jwt.createToken(usuario)
+                    });
+                }else{
+                    return res.status(200).send({ resultado });
+                }
+            }
+        }
+    })
+}
+
+
 // 3. Exportar el modulo del controlador:
 module.exports = {
     userTest,
-    crudUser
+    crudUser,
+    login
 }

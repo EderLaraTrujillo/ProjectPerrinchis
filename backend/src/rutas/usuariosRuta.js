@@ -13,6 +13,7 @@ const api = express.Router();
 
 api.get('/rutatest', UserCtrl.userTest);
 api.post('/registro', UserCtrl.crudUser);
+api.post('/ingreso', UserCtrl.login);
 
 
 /*        Exportamos la ruta:       */
