@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "95d7d311-a14d-41b6-baec-401091836239",
+		"name": "Perrinchis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3800/registro",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "iduser",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "correo",
+							"value": "paula@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "clave",
+							"value": "paula12345",
+							"type": "text"
+						},
+						{
+							"key": "iddatopersonal",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "tipodocumento",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "genero",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "nombre",
+							"value": "Paula",
+							"type": "text"
+						},
+						{
+							"key": "apellido",
+							"value": "Trujillo",
+							"type": "text"
+						},
+						{
+							"key": "cedula",
+							"value": "28999999",
+							"type": "text"
+						},
+						{
+							"key": "direccion",
+							"value": "Calle 43 # 4- 12",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "3009998789",
+							"type": "text"
+						},
+						{
+							"key": "fechanace",
+							"value": "01-12-1988",
+							"type": "text"
+						},
+						{
+							"key": "perfil",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "tipousuario",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "idcliente",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "idempleado",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "opcion",
+							"value": "guardar",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3800/api/registro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3800",
+					"path": [
+						"api",
+						"registro"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3800/registro",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "iduser",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "correo",
+									"value": "paula@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "clave",
+									"value": "paula12345",
+									"type": "text"
+								},
+								{
+									"key": "iddatopersonal",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tipodocumento",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "genero",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "Paula",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "Trujillo",
+									"type": "text"
+								},
+								{
+									"key": "cedula",
+									"value": "28999999",
+									"type": "text"
+								},
+								{
+									"key": "direccion",
+									"value": "Calle 43 # 4- 12",
+									"type": "text"
+								},
+								{
+									"key": "telefono",
+									"value": "3009998789",
+									"type": "text"
+								},
+								{
+									"key": "fechanace",
+									"value": "01-12-1988",
+									"type": "text"
+								},
+								{
+									"key": "perfil",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tipousuario",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "idcliente",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "idempleado",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "opcion",
+									"value": "guardar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3800/api/registro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3800",
+							"path": [
+								"api",
+								"registro"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3800/api/rutatest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:3800/api/rutatest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3800",
+					"path": [
+						"api",
+						"rutatest"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3800/api/rutatest",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3800/api/rutatest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3800",
+							"path": [
+								"api",
+								"rutatest"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3800/api/ingreso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "usuario",
+							"value": "eder@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "passuser",
+							"value": "eder12345",
+							"type": "text"
+						},
+						{
+							"key": "gettoken",
+							"value": "true",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3800/api/ingreso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3800",
+					"path": [
+						"api",
+						"ingreso"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:3800/api/ingreso",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "usuario",
+									"value": "eder@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "passuser",
+									"value": "eder12345",
+									"type": "text"
+								},
+								{
+									"key": "gettoken",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3800/api/ingreso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3800",
+							"path": [
+								"api",
+								"ingreso"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

@@ -59,7 +59,7 @@ function userTest(req, res){
 
      // Fabricamos la consulta SQL:
      let sql = "CALL CrudUsuario("+iduser+", '"+correo+"', '"+clave+"', "+iddatopersonal+", "+tipodocumento+", "+genero+", '"+nombre+"', '"+apellido+"', '"+cedula+"', '"+direccion+"', '"+telefono+"', '"+fechanace+"', "+perfil+", "+tipousuario+", "+idcliente+", "+idempleado+", '"+opcion+"')";
-     console.log(sql);
+     
      // Ejecutamos la consutal SQL:
      conn.query(sql, (err, resultado)=>{ 
         if (err) throw err;                 // Si hay un error me lo muestra.
@@ -103,7 +103,7 @@ function login(req, res){
                 // Capturamos el token en una variable:
                 if(parametros.gettoken){
                     return res.status(200).send({
-                        token: jwt.createToken(usuario)
+                        token: jwt.createToken(resultado[0])
                     });
                 }else{
                     return res.status(200).send({ resultado });
