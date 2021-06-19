@@ -113,10 +113,51 @@ function login(req, res){
     })
 }
 
+/* -----------------------------      GETUSERS         ------------------------------ */
+function getPersonas(req, res){
+    // Consulta SQL:
+    const sql = "SELECT * FROM personas";
+    // Ejecutamos la consulta:
+    conn.query(sql, (err, listado)=>{
+        if (err) throw err;                 // En caso de tener error lo imprime
+        if (listado.length > 0){
+            let Personas = listado;         // Mostrar las personas que trae la consulta
+            let Total = Personas.length;    // Cuantos elementos trae el arreglo
+            return res.status(200).send({
+                Total : Total,
+                Gente : Personas
+            });
+        }else {
+            return res.status(404).send({ mensaje: msj.m404 });
+        }
+    })
+}
+/* -----------------------------      GETUSER         ------------------------------ */
+// La información de una persona sirve para poder cruzar para hacer la edición
+function getPersona(req, res){
+    let correo = req.params.correo;
+    // Consulta SQL buscando por correo:
+    const sql = "SELECT * FROM personas where CorreElect like '%"+correo+"%'";
+    console.log(sql);
+    // Ejecutamos la consulta:
+    conn.query(sql, (err, usuario)=>{
+        if (err) throw err;                     // En caso de tener error lo imprime
+        if (usuario.length > 0){
+            let Persona = usuario[0];           // Mostrar las personas que trae la consulta
+            return res.status(200).send({
+                Usuario : Persona
+            });
+        }else {
+            return res.status(404).send({ mensaje: msj.m404 });
+        }
+    })
+}
 
 // 3. Exportar el modulo del controlador:
 module.exports = {
     userTest,
     crudUser,
-    login
+    login,
+    getPersonas,
+    getPersona
 }

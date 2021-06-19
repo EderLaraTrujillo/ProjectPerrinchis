@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="WB DataDic" />
+    <meta name="description" content="perrinchis Data Dictionary." />
+    <title>Data Dictionary Store Model</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+    <header class="col-12 bg-dark nav-dark">
+        <div class="container text-light">
+            <h1 class="text-light">Data Dictionay Store Model</h1>
+            <p class="text-light">
+                <em>2021-06-11</em> <code class="text-light">Eder Lara Trujillo</code>
+            </p>
+        </div>
+    </header>
+    <section class="container">
+        <div class="row mb-3">
+            <h2 class="text-center col-12">Alphabetic Index</h2>
+            <div class="col-6 text-center">
+                <ul class="navbar-nav mr-auto">
+                    <li><a href='#Categoria'>Categoria</a></li>
+                    <li><a href='#Clientes'>Clientes</a></li>
+                    <li><a href='#DatosPersonales'>DatosPersonales</a></li>
+                    <li><a href='#DetaFoPa'>DetaFoPa</a></li>
+                    <li><a href='#DetaTran'>DetaTran</a></li>
+                    <li><a href='#Empleados'>Empleados</a></li>
+                    <li><a href='#Empresa'>Empresa</a></li>
+                    <li><a href='#FoPago'>FoPago</a></li>
+                </ul>
+            </div>
+            <div class="col-6 text-center">
+             <ul class="navbar-nav mr-auto">
+                <li><a href='#Generos'>Generos</a></li>
+                <li><a href='#Perfiles'>Perfiles</a></li>
+                <li><a href='#Productos'>Productos</a></li>
+                <li><a href='#TipoDocus'>TipoDocus</a></li>
+                <li><a href='#TipoTran'>TipoTran</a></li>
+                <li><a href='#TipoUsuario'>TipoUsuario</a></li>
+                <li><a href='#Transacciones'>Transacciones</a></li>
+                <li><a href='#Usuarios'>Usuarios</a></li>
+            </ul>
+        </div>
+    </div>    
+
+    <table class="table table-bordered table-hover" id='Categoria'>
+        <caption>Categoria</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla de categoria de productos</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idCategoria</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave primaria de la categoría de los productos</td>
+        </tr>
+        <tr>
+            <td>NomCate</td>
+            <td>VARCHAR(150)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Nombre de la categoría del producto</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='Clientes'>
+        <caption>Clientes</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla para Clientes</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idClientes</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave primaria para clientes</td>
+        </tr>
+        <tr>
+            <td>idUsuarios</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave primaria de usuario</td>
+        </tr>
+        <tr>
+            <td>FechRegi</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Fecha de registro de cliente</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='DatosPersonales'>
+        <caption>DatosPersonales</caption>
+        <tr><td colspan='11' class="bg-dark text-light">tabla de datos personales de de usuario</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idDatosPersonales</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave Primaria para datos de usuarios</td>
+        </tr>
+        <tr>
+            <td>idUsuarios</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave Primaria de usuarios</td>
+        </tr>
+        <tr>
+            <td>idTipoDocus</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave Primaria de tipo de documentos</td>
+        </tr>
+        <tr>
+            <td>idGeneros</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave Primaria de géneros</td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td>VARCHAR(255)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Nombre de usuario</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>VARCHAR(255)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Apelliddos de usuario</td>
+        </tr>
+        <tr>
+            <td>Cedula</td>
+            <td>VARCHAR(25)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Número de cédula de usuario</td>
+        </tr>
+        <tr>
+            <td>Direccion</td>
+            <td>TEXT</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Dirección de usuario</td>
+        </tr>
+        <tr>
+            <td>Telefono</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Teléfono de usuario</td>
+        </tr>
+        <tr>
+            <td>CorreElect</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Correo Electrónico del usuario</td>
+        </tr>
+        <tr>
+            <td>FechaNace</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Fecha de Nacimiento de usuario</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='DetaFoPa'>
+        <caption>DetaFoPa</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla de Detalle de Forma De pago</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idDetaFoPa</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave para detalle de forma de pago</td>
+        </tr>
+        <tr>
+            <td>idFoPago</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave de Forma de pago</td>
+        </tr>
+        <tr>
+            <td>idTransacciones</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave de transacción</td>
+        </tr>
+        <tr>
+            <td>ValorPago</td>
+            <td>DECIMAL(20,2)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Valor pagado con la forma de pago, ejem: efectivo=10.000, Tarjeta Débito=40.000</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='DetaTran'>
+        <caption>DetaTran</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla de detalle de la transaccion, donde se registran los productos por cada venta</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idDetaTran</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave primaria del detalle de transacción</td>
+        </tr>
+        <tr>
+            <td>idTransacciones</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave primaria de la transacción</td>
+        </tr>
+        <tr>
+            <td>idProductos</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave primaria de producto en la transacción</td>
+        </tr>
+        <tr>
+            <td>CantComp</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Cantidad de producto adquirido en la transacción</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='Empleados'>
+        <caption>Empleados</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla para Empleados</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idEmpleados</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave primaria para empleados</td>
+        </tr>
+        <tr>
+            <td>idUsuarios</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave primaria de usuarios</td>
+        </tr>
+        <tr>
+            <td>idEmpresa</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave primaria de empresa</td>
+        </tr>
+        <tr>
+            <td>Feching</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Fecha de ingreso del empleado</td>
+        </tr>
+        <tr>
+            <td>EstaEmpl</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>'Activo'</td>
+            <td>Estado del empleado = 'Activo' - 'Inactivo'</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='Empresa'>
+        <caption>Empresa</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Entidad Empresa</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idEmpresa</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Numero de iterador de empresa</td>
+        </tr>
+        <tr>
+            <td>Nit</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>NIT Numero de registro tributario</td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td>VARCHAR(255)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Nombre de la Empresa</td>
+        </tr>
+        <tr>
+            <td>Direccion</td>
+            <td>VARCHAR(255)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Telefono</td>
+            <td>VARCHAR(25)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>VARCHAR(255)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Logo</td>
+            <td>VARCHAR(255)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>EstaEmpresa</td>
+            <td>VARCHAR(25)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Estado de la empresa = 'Activo' - 'Inactivo'</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='FoPago'>
+        <caption>FoPago</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla Forma de Pago</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idFoPago</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave primaria de forma de pago</td>
+        </tr>
+        <tr>
+            <td>NombFoPa</td>
+            <td>VARCHAR(255)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Nombre de Forma de Pago = Efectivo, Tarjeta Débito, Tarjeta Crédito, Bonos, Etc..</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='Generos'>
+        <caption>Generos</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla para géneros</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idGeneros</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave Primaria paraGéneros</td>
+        </tr>
+        <tr>
+            <td>Genero</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Genero= 'Femenino', 'Masculino', 'Indeterminado'</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='Perfiles'>
+        <caption>Perfiles</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla para registrar los perfiles de las personas de mi sistema de información</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idPerfiles</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave Primaria para perfiles</td>
+        </tr>
+        <tr>
+            <td>idUsuarios</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave primaria de Ususario</td>
+        </tr>
+        <tr>
+            <td>idTipoUsuario</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave primaria de tipo de usuario</td>
+        </tr>
+        <tr>
+            <td>FechaIng</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Fecha de ingreso</td>
+        </tr>
+        <tr>
+            <td>EstaPerfil</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Estado del perfil = 'Activo' - 'Inactivo'</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='Productos'>
+        <caption>Productos</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla para productos</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idProductos</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Identificador del producto</td>
+        </tr>
+        <tr>
+            <td>idCategoria</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Categoria del producto</td>
+        </tr>
+        <tr>
+            <td>NombProd</td>
+            <td>VARCHAR(255)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Nombre del producto</td>
+        </tr>
+        <tr>
+            <td>Precio</td>
+            <td>DECIMAL(20,2)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Precio del producto</td>
+        </tr>
+        <tr>
+            <td>Marca</td>
+            <td>VARCHAR(255)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Marca del producto</td>
+        </tr>
+        <tr>
+            <td>Descripcion</td>
+            <td>MEDIUMTEXT</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Descripción adicional del producto</td>
+        </tr>
+        <tr>
+            <td>CantProd</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Cantidad de producto disponible</td>
+        </tr>
+        <tr>
+            <td>Imagen</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Nombre de la imagen del producto</td>
+        </tr>
+        <tr>
+            <td>EstaProd</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>'Disponible'</td>
+            <td>Estado del producto = 'Disponible' - 'No Disponible'</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='TipoDocus'>
+        <caption>TipoDocus</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla para los tipos de documentos</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idTipoDocus</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave Primaria para tipo de documentos</td>
+        </tr>
+        <tr>
+            <td>NombTiDoc</td>
+            <td>VARCHAR(150)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Nombre de tipo de documentos: Registro Civil Tarjeta de Identidad, Cédula de Ciudadania, Cédula de Extrangería, Pasaporte Visa, No Documentado</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='TipoTran'>
+        <caption>TipoTran</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla Tipo de Transaccion</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idTipoTran</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave primaria para el tipo de transacción</td>
+        </tr>
+        <tr>
+            <td>NombTran</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Nombre del tipo de transacccion, compra, cotización, venta, devolución etc.</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='TipoUsuario'>
+        <caption>TipoUsuario</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla para agrupar a las diferentes PERSONAS que participan en la aplicacion</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idTipoUsuario</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Iterador Llave primaria del tipo de usuario</td>
+        </tr>
+        <tr>
+            <td>NombTipo</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Nombre del tipo de usuario Ej : Empleado, Cliente, Proveedor, Administrador,  etc</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='Transacciones'>
+        <caption>Transacciones</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla de transacciones de compra y venta</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idTransacciones</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave primaria de Transacción</td>
+        </tr>
+        <tr>
+            <td>idTipoTran</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave primaria del tipo de transacción</td>
+        </tr>
+        <tr>
+            <td>idEmpleados</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave primaria del empleado que realiza la venta o transacción</td>
+        </tr>
+        <tr>
+            <td>idClientes</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Llave primaria del cliente que realiza la compra o transacción</td>
+        </tr>
+        <tr>
+            <td>NumeTran</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Numero de transaccion, consecutivo para tipo de transacción</td>
+        </tr>
+        <tr>
+            <td>FechTran</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Fecha de transaccion</td>
+        </tr>
+        <tr>
+            <td>ValorTran</td>
+            <td>DECIMAL(20,2)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Valor total de la transaccion</td>
+        </tr>
+        <tr>
+            <td>EstaTran</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>'Causado'</td>
+            <td>Estado de la transaccion 'Causado' - 'Anulado'</td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-hover" id='Usuarios'>
+        <caption>Usuarios</caption>
+        <tr><td colspan='11' class="bg-dark text-light">Tabla de usuarios</td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idUsuarios</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Llave primaria de usuario</td>
+        </tr>
+        <tr>
+            <td>NickName</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Correo electronico para iniciar sesión</td>
+        </tr>
+        <tr>
+            <td>PassUser</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Password del usuario</td>
+        </tr>
+        <tr>
+            <td>EstaUser</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>'Activo'</td>
+            <td>Estado del usuario = 'Activo' - 'Inactivo'</td>
+        </tr>
+    </table>
+</section>
+</body>
+</html>

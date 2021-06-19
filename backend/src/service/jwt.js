@@ -26,7 +26,6 @@ exports.createToken = function(user){
         fiat: momento().unix(),
         fexp: momento().add(2, 'days').unix()
     }
-    console.log(payload);
     // Encriptas el payload con la contraseña secreta:
     return jwt.encode(payload, secret);
 }

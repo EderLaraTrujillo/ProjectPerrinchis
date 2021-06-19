@@ -6,6 +6,7 @@
  'use strict';
  // constantes, variables y librerias:
  const jwt = require('jwt-simple');
+
  const momento = require('moment');
  require('dotenv').config();
 
@@ -23,13 +24,15 @@ exports.loginSecure = function(req, res, next){
             mensaje : msj.m403
         });
     }
+    // Declarar la variable Payload:
+    let payload;
     // Crear la variable token que es la que le vamos a pasar a header.authorization.
     let token = req.headers.authorization.replace(/['"]+/g, '');    // Remplazo caracteres especiales (['"]+/g) por nada. 
     
     // Manejamos el error para el token: try, catch, evita el desbordamiento de memoria en un proceso:
     try {
-        // validar pyload y decodificarlo:
-        let payload = jwt.decode(token, secret);
+        // Transformar el payload y decodificarlo:
+        payload = jwt.decode(token, secret);
         // validar la fecha de caducidad del payload:
         if (payload.fexp <= momento().unix()) {
             return res.status(401).send({
