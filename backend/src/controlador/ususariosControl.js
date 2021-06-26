@@ -27,43 +27,42 @@ function userTest(req, res){
     });
 }
 
- /* -----------------------------      CRUD         ------------------------------ */
- function crudUser(req, res){
-     // Capturar los datos del formulario:
-     const parametros = req.body;
-     let iduser = parametros.iduser;
-     let correo = parametros.correo;
-     let clave = parametros.clave;
-     let iddatopersonal = parametros.iddatopersonal;
-     let tipodocumento = parametros.tipodocumento;
-     let genero = parametros.genero;
-     let nombre = parametros.nombre;
-     let apellido = parametros.apellido;
-     let cedula = parametros.cedula;
-     let direccion = parametros.direccion;
-     let telefono = parametros.telefono;
-     let fechanace = parametros.fechanace;
-     let perfil = parametros.perfil;
-     let tipousuario = parametros.tipousuario;
-     let idcliente = parametros.idcliente;
-     let idempleado = parametros.idempleado;
-     let opcion = parametros.opcion;
-     // Agregamos datos por opcion sin necesidad de ponerlos en un formulario:
-     if (opcion === 'guardar') {
+/* -----------------------------      CRUD         ------------------------------ */
+function crudUser(req, res){
+    // Capturar los datos del formulario:
+    const parametros = req.body;
+    let iduser = parametros.iduser;
+    let correo = parametros.correo;
+    let clave = parametros.clave;
+    let iddatopersonal = parametros.iddatopersonal;
+    let tipodocumento = parametros.tipodocumento;
+    let genero = parametros.genero;
+    let nombre = parametros.nombre;
+    let apellido = parametros.apellido;
+    let cedula = parametros.cedula;
+    let direccion = parametros.direccion;
+    let telefono = parametros.telefono;
+    let fechanace = parametros.fechanace;
+    let perfil = parametros.perfil;
+    let tipousuario = parametros.tipousuario;
+    let idcliente = parametros.idcliente;
+    let idempleado = parametros.idempleado;
+    let opcion = parametros.opcion;
+    // Agregamos datos por opcion sin necesidad de ponerlos en un formulario:
+    if (opcion === 'guardar') {
         iduser = 0;
         iddatopersonal = 0;
         perfil = 0;
         idcliente = 0;
         idempleado = 0;
-     }
+    }
 
-     // Fabricamos la consulta SQL:
-     let sql = "CALL CrudUsuario("+iduser+", '"+correo+"', '"+clave+"', "+iddatopersonal+", "+tipodocumento+", "+genero+", '"+nombre+"', '"+apellido+"', '"+cedula+"', '"+direccion+"', '"+telefono+"', '"+fechanace+"', "+perfil+", "+tipousuario+", "+idcliente+", "+idempleado+", '"+opcion+"')";
-     
-     // Ejecutamos la consutal SQL:
-     conn.query(sql, (err, resultado)=>{ 
+    // Fabricamos la consulta SQL:
+    let sql = "CALL CrudUsuario("+iduser+", '"+correo+"', '"+clave+"', "+iddatopersonal+", "+tipodocumento+", "+genero+", '"+nombre+"', '"+apellido+"', '"+cedula+"', '"+direccion+"', '"+telefono+"', '"+fechanace+"', "+perfil+", "+tipousuario+", "+idcliente+", "+idempleado+", '"+opcion+"')";
+    
+    // Ejecutamos la consutal SQL:
+    conn.query(sql, (err, resultado)=>{ 
         if (err) throw err;                 // Si hay un error me lo muestra.
-
         if(resultado.length > 0){
             let operacion = resultado[0];
             return res.status(200).send({
@@ -73,10 +72,10 @@ function userTest(req, res){
         }else {
             return res.status(404).send({ mensaje : msj.m404 });
         }
-     });
- }
+    });
+}
 
-  /* -----------------------------      LOGIN         ------------------------------ */
+/* -----------------------------      LOGIN         ------------------------------ */
 
 function login(req, res){
     const parametros = req.body;
@@ -94,7 +93,6 @@ function login(req, res){
         if (usuario.length > 0 ) {
             // Cargamos el resultado en una variable:
             const resultado = usuario[0];
-            console.log(resultado); // Imprimimos el resultado;
             if (resultado.mensaje === 'Usuario y/o contraseña incorrectos!' ) {
                 return res.status(200).send({
                     mensaje: resultado.mensaje
@@ -124,11 +122,11 @@ function getPersonas(req, res){
             let Personas = listado;         // Mostrar las personas que trae la consulta
             let Total = Personas.length;    // Cuantos elementos trae el arreglo
             return res.status(200).send({
-                Total : Total,
-                Gente : Personas
+                Total : Total,              // Mostramos el total de objetos del listado
+                Gente : Personas            // Discriminamos cada una de las personas como "Gente"
             });
         }else {
-            return res.status(404).send({ mensaje: msj.m404 });
+            return res.status(404).send({ mensaje: msj.m404 });     // Si no hay nada guardado, muestra error 404
         }
     })
 }
@@ -138,7 +136,6 @@ function getPersona(req, res){
     let correo = req.params.correo;
     // Consulta SQL buscando por correo:
     const sql = "SELECT * FROM personas where CorreElect like '%"+correo+"%'";
-    console.log(sql);
     // Ejecutamos la consulta:
     conn.query(sql, (err, usuario)=>{
         if (err) throw err;                     // En caso de tener error lo imprime

@@ -18,6 +18,8 @@ api.post('/registro', UserCtrl.crudUser);                               // Ruta 
 api.post('/ingreso', UserCtrl.login);                                   // Ruta para el inicio de sesión
 api.get('/personas', mdAuth.loginSecure, UserCtrl.getPersonas);         // Ruta para listar todos los usuarios
 api.get('/usuario/:correo',mdAuth.loginSecure, UserCtrl.getPersona);    // Traigo los datos de 1 persona
+//api.delete('/borrar/:correo', mdAuth, UserCtrl.crudUser);               // Ruta para eliminar un usuario
+//api.put('/actualizar/:correo', mdAuth, UserCtrl.crudUser);              // Ruta para modificar datos de usuario.
 
 
 /*        Exportamos la ruta:       */

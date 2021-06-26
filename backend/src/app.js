@@ -7,17 +7,17 @@
 
 // 1. Variables y constantes del servicio:
 const express = require('express');
-const bodyparser = require('body-parser');
 const morgan = require('morgan');
 
 const app = express();
 
 // 2. Rutas de servicio
 const rutausuario = require('./rutas/usuariosRuta');
+const rutaproducto = require('./rutas/productos.ruta');
 
 // 3. Middleware o puente entre componentes
-app.use(bodyparser.urlencoded({extended : false}));
-app.use(bodyparser.json());
+app.use(express.urlencoded({extended : false}));
+app.use(express.json());
 app.use(morgan('dev'));
 
 // 4. Cabeceras de Peticion.
@@ -31,6 +31,7 @@ app.use((req, res, next)=>{
 
 // 5. Exportamos rutas de servicio
 app.use('/api', rutausuario);
+app.use('/api', rutaproducto);
 
 // 6. Exportamos el módulo servidor:
 module.exports = app;
