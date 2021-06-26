@@ -41,12 +41,13 @@ function crudProducto(req, res){
     let filename = req.files.imagen.path;                                   // Con esto tenemos la imagen que adjuntamos al body
     let fileSplit = filename.split('src\\statics\\images\\productos\\');    // Cortamos la ruta del archivo y le dejamos solo el nombre
     let imagen = fileSplit[1];                                              // Nombre de la imagen
-    let fileExt = imagen.split('\.');                                        // Corto por el . para traer la ext del archivo
+    let fileExt = imagen.split('\.');                                       // Corto por el . para traer la ext del archivo
     fileExt = fileExt[1];
     console.log(filename, fileSplit, imagen, fileExt);
     // Control de manejo de imagen:
     // if (fileExt !== 'jpg' || fileExt !== 'jpeg' || fileExt !== 'gif' || fileExt !== 'bmp') {
     //     return res.status(403).send({ mensaje: 'Formato de imagen incompatible '});
+    // }
  
     // Construimos la consulta sql:
     let sql = "call CrudProducto("+idprod+","+categoria+",'"+nombre+"',"+precio+",'"+marca+"', '"+referencia+"', '"+descripcion+"',"+cantidad+", '"+imagen+"', '"+opcion+"')";
@@ -63,7 +64,6 @@ function crudProducto(req, res){
             return res.status(404).send({ mensaje: msj.m404 });
         }
     })
-    
 }
 
 /* ------------------------------------ Fin de Funciones ------------------------------------ */
