@@ -31,6 +31,7 @@ function userTest(req, res){
 function crudUser(req, res){
     // Capturar los datos del formulario:
     const parametros = req.body;
+    // Claves de donde obtengo los valores:
     let iduser = parametros.iduser;
     let correo = parametros.correo;
     let clave = parametros.clave;
@@ -59,7 +60,6 @@ function crudUser(req, res){
 
     // Fabricamos la consulta SQL:
     let sql = "CALL CrudUsuario("+iduser+", '"+correo+"', '"+clave+"', "+iddatopersonal+", "+tipodocumento+", "+genero+", '"+nombre+"', '"+apellido+"', '"+cedula+"', '"+direccion+"', '"+telefono+"', '"+fechanace+"', "+perfil+", "+tipousuario+", "+idcliente+", "+idempleado+", '"+opcion+"')";
-    
     // Ejecutamos la consutal SQL:
     conn.query(sql, (err, resultado)=>{ 
         if (err) throw err;                 // Si hay un error me lo muestra.

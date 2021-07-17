@@ -7,6 +7,7 @@
 let momento = require('moment');                    // Trabajamos con Fechas
 let { msj } = require('./serverstatus');            // Mensajes de Error
 let fs = require('fs');                             // Middleware para manejo de rutas de archivos src\statics\images\productos
+let path = require('path');                         // Montamos en una variable la libreria de rutas path
 
 // Importamos las librerias de control de archivos y rutas:
 const conn = require('../config/conex');            // Connection a la base de datos
@@ -27,6 +28,7 @@ function producTest(req, res){
 /* ------------------------------------ CRUD ------------------------------------ */
 function crudProducto(req, res){
     const parametros = req.body;                        // Traer los parametros del body, keys y values;
+    
     let idprod = parametros.idprod;
     let opcion = parametros.opcion;                     // Variables para validar
     let categoria = parametros.categoria;
@@ -43,9 +45,9 @@ function crudProducto(req, res){
     let imagen = fileSplit[1];                                              // Nombre de la imagen
     let fileExt = imagen.split('\.');                                       // Corto por el . para traer la ext del archivo
     fileExt = fileExt[1];
-    console.log(filename, fileSplit, imagen, fileExt);
+    // console.log(filename, fileSplit, imagen, fileExt);
     // Control de manejo de imagen:
-    // if (fileExt !== 'jpg' || fileExt !== 'jpeg' || fileExt !== 'gif' || fileExt !== 'bmp') {
+    // if (fileExt != 'jpg' || fileExt != 'jpeg' || fileExt != 'gif' || fileExt != 'bmp' || fileExt != 'png') {
     //     return res.status(403).send({ mensaje: 'Formato de imagen incompatible '});
     // }
  
@@ -65,10 +67,62 @@ function crudProducto(req, res){
         }
     })
 }
+/* ------------------------------------ GetCatalogo ------------------------------------ */
+function getCatalogo(req, res){
+    // Construimos la consulta a la base de datos:
+    let sql = "SELECT * FROM catalogo";
+    // Ejecutamos la consulta:
+    conn.query(sql, (err, respuesta)=>{
+        if (err) throw err;
+        if (respuesta.length > 0){
+            let Total = respuesta.length;       // Contamos cuantos elementos hay!!
+            return res.status(200).send({
+                catalogo: respuesta,
+                total: Total
+            });
+        }else {
+            return res.status(404).send({
+                mensaje: msj.m404
+            });
+        }
+    })
+}
+
+/* ------------------------------------ GetProducto ------------------------------------ */
+
+/* ------------------------------------ GetImage ------------------------------------ */
+function getImagen(req, res){
+    // Variable del nombre de la imagen:
+    let imagenFile = req.params.imagenFile;             // Pasamos el nombre del archivo a la ruta
+    // Variable con la ruta del archivo:
+    let pathFile = '.\/src\/statics\/images\/productos\/'+imagenFile;
+    console.log(pathFile);
+    // Validamos la existencia del archivo:
+    try {
+        // Variable para confirmar la existencia:
+        let existe = fs.statSync(pathFile);
+        let archivo = existe.isFile();
+        console.log(archivo, existe);
+        // Condicionamos la respuesta:
+        if(existe && archivo){
+            res.sendFile(path.resolve(pathFile));
+        }else {
+            return res.status(404).send({
+                mensaje: 'Error, imagen no encontrada'
+            });
+        }
+    } catch (error) {
+        return res.status(404).send({
+            mensaje: msj.m404
+        })
+    }
+}
 
 /* ------------------------------------ Fin de Funciones ------------------------------------ */
 
 module.exports = {
     producTest,
-    crudProducto
+    crudProducto,
+    getCatalogo,
+    getImagen
 }

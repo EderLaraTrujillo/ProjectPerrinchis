@@ -17,7 +17,9 @@
  
 // Rutas, desde donde vamos a acceder al control:
 api.get('/productos/test', ProdCtrl.producTest);
-api.post('/productos/crud', mdUpload, ProdCtrl.crudProducto);
+api.post('/productos/crud', [mdUpload, mdAuth.loginSecure], ProdCtrl.crudProducto);
+api.get('/productos/catalogo', ProdCtrl.getCatalogo);
+api.get('/productos/:imagenFile', ProdCtrl.getImagen);
 
 /*        Exportamos la ruta:       */
 module.exports = api;
